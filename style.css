@@ -1,0 +1,213 @@
+/* styles.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+    font-family: Arial, sans-serif;
+}
+
+.video-container {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; 
+}
+#background-video1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; 
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 40%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+.black-cover1{
+    background-color: rgba(31, 31, 31, 0.497);
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-play {
+    width: 11rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460); /* Dark space-like gradient */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2), 0 0 25px rgba(0, 204, 255, 0.5); /* Glowing effect */
+    transition: all 0.25s ease-in-out; /* Combined transition */
+    cursor: pointer; /* Pointer cursor on hover */
+    backdrop-filter: blur(5px); /* Optional: adds a frosted glass effect */
+    overflow: hidden; /* Ensures content does not overflow */
+    transform-origin: center; /* Keep the scale effect centered */
+}
+
+/* Hover effect for the button */
+.btn-play:hover {
+    background-color: rgba(103, 103, 103, 0.8); /* Set a different hover color */
+    transform: translate(-50%, -50%) scale(1.05); /* Scale up while maintaining position */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4), 0 0 35px rgba(0, 204, 255, 0.8); /* Optional: enhance shadow on hover */
+}
+
+video {
+    position: absolute;
+    left: 0; /* Keep this to start from the left */
+    top: 50%; /* Center vertically */
+    width: 30rem;
+    height: 30rem;
+    object-fit: contain;
+    transform: translateY(-50%);
+}
+
+
+.img_animation{
+    animation: slideInLeft 1s ease-in forwards; 
+    transform: translateY(-50%); /* Center vertically with translateY */
+}
+
+
+@keyframes slideInLeft {
+    from {
+        transform: translate(0, -50%); 
+    }
+    to {
+        transform: translate(80%, -50%); 
+    }
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.2 ease-in-out; /* Fade-out effect with 0.5s duration */
+}
+
+/* When the body has the 'fade-out' class, the opacity is set to 0 */
+body.fade-out {
+    opacity: 0;
+}
+
+.circle {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    background-color: white; /* Make the background transparent */
+    border: 2px solid white; /* Initial border color */
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 1s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.circle1 { top: -30%; left: 50%; transform: translateX(-50%); }  /* Adjusted for the element's height */
+.circle2 { top: 85%; left: 2%; transform: translateY(-50%); } /* Approx. 15px of a 1000px width element */
+.circle3 { top: 85%; right: 1%; transform: translateY(-50%); }  /* Approx. 5px of a 500px width element */
+.circle4 { bottom: -30%; left: 50%; transform: translateX(-50%); } /* Adjusted for the element's height */
+.circle5 { top: 4%; left: 5%; }
+.circle6 { top: 3%; right: 0.5%; } /* Adjusted for the element's width */
+/* Show circles when video is centered */
+.img_animation .circle {
+    opacity: 1;
+}
+.hide-circles .circle {
+    opacity: 0;
+}
+.circle:hover {
+    border-color: rgb(4, 4, 98); /* Shiny blue border color */
+    box-shadow: 0 0 10px rgb(4, 4, 98), 0 0 20px rgb(4, 4, 98), 0 0 30px rgb(4, 4, 98); /* Shiny effect */
+}
+h5{
+    align-items: center;
+}
+#main {
+    height: 25rem;
+    width: 20rem;
+    background-color: white;
+    margin-left: 50rem;
+    margin-top:5rem;
+    transition: opacity 1s ease, visibility 1s ease; /* Smooth transition */
+    opacity: 1;  /* Initially visible */
+    visibility: visible;
+}
+
+#main.hidden {
+    opacity: 0; /* Fully transparent */
+    visibility: hidden; /* Make the block invisible to remove from flow */
+}
+#ssv{
+    width:10rem;
+    height:10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.click_me{
+    width: 11rem;
+    height: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460); /* Dark space-like gradient */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2), 0 0 25px rgba(0, 204, 255, 0.5); /* Glowing effect */
+    transition: all 0.25s ease-in-out; /* Combined transition */
+    cursor: pointer; /* Pointer cursor on hover */
+    backdrop-filter: blur(5px); /* Optional: adds a frosted glass effect */
+    overflow: hidden; /* Ensures content does not overflow */
+    transform-origin: center; /* Keep the scale effect centered */
+}
+.symphony-btn{
+    width:20rem;
+    height:2rem;
+}
